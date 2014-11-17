@@ -1,0 +1,39 @@
+<!-- INCLUDE overall_header.html -->
+
+<a id="maincontent"></a>
+
+<h1>{L_SNOWSTORM_LIGHTS}</h1>
+<p>{L_SNOWSTORM_LIGHTS_EXPLAIN}</p>
+
+<form id="acp_snowstorm_lights" method="post" action="{U_ACTION}">
+
+	<fieldset>
+		<legend>{L_GENERAL_OPTIONS}</legend>
+
+		<dl>
+			<dt><label for="scl_enabled">{L_SCL_ENABLED}{L_COLON}</label></dt>
+			<dd>
+				<label><input type="radio" class="radio" id="scl_enabled" name="scl_enabled" value="1"<!-- IF SCL_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+				<label><input type="radio" class="radio" name="scl_enabled" value="0"<!-- IF not SCL_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+			</dd>
+		</dl>
+
+		<br />
+
+		<dl>
+			<dt><label for="snow_enabled">{L_SNOW_ENABLED}{L_COLON}</label></dt>
+			<dd>
+				<label><input type="radio" class="radio" id="snow_enabled" name="snow_enabled" value="1" <!-- IF SNOW_ENABLED -->checked="checked"<!-- ENDIF -->/> {L_YES}</label>
+				<label><input type="radio" class="radio" name="snow_enabled" value="0" <!-- IF not SNOW_ENABLED -->checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+			</dd>
+		</dl>
+	</fieldset>
+
+	<p class="submit-buttons">
+		<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+		<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+	</p>
+	{S_FORM_TOKEN}
+</form>
+
+<!-- INCLUDE overall_footer.html -->
