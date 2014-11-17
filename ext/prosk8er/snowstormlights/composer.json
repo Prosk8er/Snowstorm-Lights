@@ -1,0 +1,27 @@
+{
+	"name": "prosk8er/snowstormlights",
+	"type": "phpbb-extension",
+	"description": "Adds a Snowstorm and smashable christmas lights to your forum.",
+	"homepage": "https://github.com/Prosk8er/Steam-Mod",
+	"version": "1.0.0",
+	"time": "2013-03-16",
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Tyler",
+			"email": "prosk8er@gotskillslounge.com",
+			"homepage": "http://gotskillslounge.com",
+			"role": "Lead Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3",
+		"composer/installers": "~1.0"
+	},
+	"extra": {
+		"display-name": "Snowstorm & Lights Extension",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.1.0-RC2,<3.2.*@dev"
+		}
+	}
+}
