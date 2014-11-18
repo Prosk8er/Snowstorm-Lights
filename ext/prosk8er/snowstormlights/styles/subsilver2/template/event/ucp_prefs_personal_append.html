@@ -1,0 +1,13 @@
+<!-- IF S_SCL_ENABLED -->
+	<tr> 
+		<td class="row1" width="50%"><b class="genmed">{L_SCL_ENABLED}{L_COLON}</b><br /><span class="gensmall">{L_SCL_ENABLED_EXPLAIN}</span></td>
+		<td class="row2"><input type="radio" class="radio" name="scl_ucp_enabled" value="1"<!-- IF S_SCL_UCP_ENABLED --> checked="checked"<!-- ENDIF --> /><span class="genmed">{L_YES}</span>&nbsp;&nbsp;<input type="radio" class="radio" name="scl_ucp_enabled" value="0"<!-- IF not S_SCL_UCP_ENABLED --> checked="checked"<!-- ENDIF --> /><span class="genmed">{L_NO}</span></td>
+	</tr>
+<!-- ENDIF -->
+
+<!-- IF S_SNOW_ENABLED -->
+	<tr> 
+		<td class="row1" width="50%"><b class="genmed">{L_SNOW_ENABLED}{L_COLON}</b><br /><span class="gensmall">{L_SNOW_ENABLED_EXPLAIN}</span></td>
+		<td class="row2"><input type="radio" class="radio" name="snow_ucp_enabled" value="1"<!-- IF S_SNOW_UCP_ENABLED --> checked="checked"<!-- ENDIF --> /><span class="genmed">{L_YES}</span>&nbsp;&nbsp;<input type="radio" class="radio" name="snow_ucp_enabled" value="0"<!-- IF not S_SNOW_UCP_ENABLED --> checked="checked"<!-- ENDIF --> /><span class="genmed">{L_NO}</span></td>
+	</tr>
+<!-- ENDIF -->

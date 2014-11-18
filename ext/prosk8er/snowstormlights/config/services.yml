@@ -1,0 +1,10 @@
+services:
+    prosk8er.snowstormlights.listener:
+        class: prosk8er\snowstormlights\event\listener
+        arguments:
+            - @config
+            - @request
+            - @template
+            - @user
+        tags:
+            - { name: event.listener }

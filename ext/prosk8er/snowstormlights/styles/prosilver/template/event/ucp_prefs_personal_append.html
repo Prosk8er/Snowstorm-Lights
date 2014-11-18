@@ -1,0 +1,19 @@
+	<!-- IF S_SCL_ENABLED -->
+		<dl>
+			<dt><label for="scl_ucp_enabled0">{L_SCL_ENABLED}{L_COLON}</label><br /><span>{L_SCL_ENABLED_EXPLAIN}</span></dt>
+			<dd>
+				<label for="scl_ucp_enabled1"><input type="radio" name="scl_ucp_enabled" id="scl_ucp_enabled1" value="1"<!-- IF S_SCL_UCP_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+				<label for="scl_ucp_enabled0"><input type="radio" name="scl_ucp_enabled" id="scl_ucp_enabled0" value="0"<!-- IF not S_SCL_UCP_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+			</dd>
+		</dl>
+	<!-- ENDIF -->
+
+	<!-- IF S_SNOW_ENABLED -->
+		<dl>
+			<dt><label for="snow_ucp_enabled0">{L_SNOW_ENABLED}{L_COLON}</label><br /><span>{L_SNOW_ENABLED_EXPLAIN}</span></dt>
+			<dd>
+				<label for="snow_ucp_enabled1"><input type="radio" name="snow_ucp_enabled" id="snow_ucp_enabled1" value="1"<!-- IF S_SNOW_UCP_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+				<label for="snow_ucp_enabled0"><input type="radio" name="snow_ucp_enabled" id="snow_ucp_enabled0" value="0"<!-- IF not S_SNOW_UCP_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+			</dd>
+		</dl>
+	<!-- ENDIF -->

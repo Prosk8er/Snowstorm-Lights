@@ -20,6 +20,7 @@ class snowstorm_light_module
 		global $config, $phpbb_root_path, $phpbb_admin_path, $phpEx;
 
 		$user->add_lang('acp/common');
+		$this->user->add_lang_ext('prosk8er/snowstormlights', 'info_acp_snowstorm_lights');
 		$this->tpl_name = 'snowstorm_lights';
 		$this->page_title = $user->lang['CHRISTMAS_LIGHTS_MOD'];
 		add_form_key('acp_snowstorm_lights');
