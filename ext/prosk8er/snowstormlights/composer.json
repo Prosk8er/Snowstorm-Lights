@@ -22,6 +22,11 @@
 		"display-name": "Snowstorm & Lights Extension",
 		"soft-require": {
 			"phpbb/phpbb": ">=3.1.0-RC2,<3.2.*@dev"
+		},
+		"version-check": {
+			"host": "version.gotskillslounge.com",
+			"directory": "/phpbb-extensions",
+			"filename": "snowstormlights_versions.json"
 		}
 	}
 }

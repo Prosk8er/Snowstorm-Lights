@@ -10,11 +10,11 @@
 
 namespace prosk8er\snowstormlights\event;
 
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
 /**
 * Event listener
 */
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-
 class listener implements EventSubscriberInterface
 {
 	/** @var \phpbb\config\config */
@@ -47,6 +47,13 @@ class listener implements EventSubscriberInterface
 		$this->user = $user;
 	}
 
+	/**
+	* Assign functions defined in this class to event listeners in the core
+	*
+	* @return array
+	* @static
+	* @access public
+	*/
 	static public function getSubscribedEvents()
 	{
 		return array(
