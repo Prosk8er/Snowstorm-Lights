@@ -12,23 +12,14 @@ namespace prosk8er\snowstormlights\migrations\v10x;
 
 class release_1_0_0 extends \phpbb\db\migration\migration
 {
-	public function effectively_installed()
-	{
-		return isset($this->config['snowstorm_lights_version']) && version_compare($this->config['snowstorm_lights_version'], '1.0.0', '>=');
-	}
-
-	static public function depends_on()
-	{
-		return array('\phpbb\db\migration\data\v310\dev');
-	}
 
 	public function update_data()
 	{
 		return array(
 			'add_columns' => array(
 				$this->table_prefix . 'users' => array(
-					'user_scl_enabled' => array('BOOL', '1'),
-					'user_snow_enabled' => array('BOOL', '1'),
+					'user_scl_enabled' => array('BOOL', 1),
+					'user_snow_enabled' => array('BOOL', 1),
 				),
 			),
 

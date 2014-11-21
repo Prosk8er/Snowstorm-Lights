@@ -77,43 +77,49 @@ class listener implements EventSubscriberInterface
 
 	public function assign_to_template($event)
 	{
-		$tpl_vars = array(
+		$this->template->assign_vars(array(
 			'S_SCL_ENABLED'		=> (!empty($this->config['scl_enabled'])) ? true : false,
 			'S_SCL_UCP_ENABLED'	=> (!empty($this->user->data['user_scl_enabled'])) ? true : false,
 			'S_SNOW_ENABLED'	=> (!empty($this->config['snow_enabled'])) ? true : false,
 			'S_SNOW_UCP_ENABLED'	=> (!empty($this->user->data['user_snow_enabled'])) ? true : false,
-		);
-
-		$this->template->assign_vars($tpl_vars);
+		));
 	}
 
 	public function ucp_prefs_personal_data($event)
 	{
-		$data = array(
+		$data = $event['data'];
+
+		$data = array_merge($data, array(
 			'scl_ucp_enabled'	=> $request->variable('scl_ucp_enabled', (bool) $this->user->data['user_scl_enabled']),
 			'snow_ucp_enabled'	=> $request->variable('snow_ucp_enabled', (bool) $this->user->data['user_snow_enabled']),
-		);
+		));
 
-		$vars = array('submit', 'data');
+		$event['data'] = $data;
 	}
 
 	public function ucp_prefs_personal_update_data($event)
 	{
-		$sql_ary = array(
+		$data = $event['data'];
+		$sql_ary = $event['sql_ary'];
+
+		$sql_ary = array_merge($sql_ary, array(
 			'user_scl_enabled'	=> $data['scl_ucp_enabled'],
 			'user_snow_enabled'	=> $data['snow_ucp_enabled'],
-		);
+		));
 
-		$vars = array('data', 'sql_ary');
+		$event['sql_ary'] = $sql_ary;
 	}
 
 	public function ucp_prefs_view_update_data($event)
 	{
-		$sql_ary = array(
+		$data = $event['data'];
+		$sql_ary = $event['sql_ary'];
+
+		$sql_ary = array_merge($sql_ary, array(
 			'S_SCL_UCP_ENABLED'	=> $data['scl_ucp_enabled'],
 			'S_SNOW_UCP_ENABLED'	=> $data['snow_ucp_enabled'],
-		);
+		));
 
-		$vars = array('data', 'sql_ary');
+		$event['sql_ary'] = $sql_ary;
 	}
 }
