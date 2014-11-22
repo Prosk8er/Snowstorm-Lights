@@ -58,7 +58,7 @@ class snowstorm_lights_module
 		$this->tpl_name = 'snowstorm_lights';
 
 		// Set the page title for our ACP page
-		$this->page_title = $user->lang['CHRISTMAS_LIGHTS_MOD'];
+		$this->page_title = $user->lang['ACP_SNOWSTORM_LIGHTS'];
 
 		// Define the name of the form for use as a form key
 		$form_name = 'acp_snowstorm_lights';
