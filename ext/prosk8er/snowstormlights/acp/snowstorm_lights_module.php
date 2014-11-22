@@ -12,12 +12,41 @@ namespace prosk8er\snowstormlights\acp;
 
 class snowstorm_lights_module
 {
+	/** @var \phpbb\config\config */
+	protected $config;
+
+	/** @var \phpbb\db\driver\driver_interface */
+	protected $db;
+
+	/** @var \phpbb\request\request */
+	protected $request;
+
+	/** @var \phpbb\template\template */
+	protected $template;
+
+	/** @var \phpbb\user */
+	protected $user;
+
+	/** @var string */
+	protected $phpbb_root_path;
+
+	/** @var string */
+	protected $php_ext;
+
+	/** @var string */
 	public $u_action;
 
 	public function main($id, $mode)
 	{
-		global $db, $user, $auth, $template, $cache, $request;
-		global $config, $phpbb_root_path, $phpbb_admin_path, $phpEx;
+		global $config, $db, $request, $template, $user, $phpbb_root_path, $phpEx;
+
+		$this->config = $config;
+		$this->db = $db;
+		$this->request = $request;
+		$this->template = $template;
+		$this->user = $user;
+		$this->phpbb_root_path = $phpbb_root_path;
+		$this->php_ext = $phpEx;
 
 		// Add the common lang file
 		$this->user->add_lang(array('acp/common'));
