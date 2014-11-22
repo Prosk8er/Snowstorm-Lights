@@ -21,17 +21,21 @@ class release_1_0_0 extends \phpbb\db\migration\migration
 	{
 		return array('\phpbb\db\migration\data\v310\dev');
 	}
+	public function update_schema()
+	{
+		return array(
+			'add_columns'	=> array(
+				$this->table_prefix . 'users'			=> array(
+					'user_scl_enabled'				=> array('BOOL', 1),
+					'user_snow_enabled' => array('BOOL', 1),
+				),
+			),
+		);
+	}
 
 	public function update_data()
 	{
 		return array(
-			'add_columns' => array(
-				$this->table_prefix . 'users' => array(
-					'user_scl_enabled' => array('BOOL', 1),
-					'user_snow_enabled' => array('BOOL', 1),
-				),
-			),
-
 			array('config.add', array('scl_enabled', 0)),
 			array('config.add', array('snow_enabled', 0)),
 			array('config.add', array('snowstorm_lights_version', '1.0.0')),
@@ -43,6 +47,42 @@ class release_1_0_0 extends \phpbb\db\migration\migration
 					'modes'				=> array('settings'),
 				),
 			)),
+		);
+	}
+
+	public function revert_data()
+	{
+		return array(
+			array('config.remove', array('scl_enabled')),
+			array('config.remove', array('snow_enabled')),
+			array('config.remove', array('snowstorm_lights_version')),
+
+
+			array('module.remove', array(
+				'acp',
+				'ACP_SNOWSTORM_LIGHTS',
+				array(
+					'module_basename'	=> '\prosk8er\snowstormlights\acp\snowstorm_lights_module',
+					'modes'				=> array('settings'),
+				),
+			)),
+			array('module.remove', array(
+				'acp',
+				'ACP_CAT_DOT_MODS',
+				'ACP_SNOWSTORM_LIGHTS'
+			)),
+		);
+	}
+
+	public function revert_schema()
+	{
+		return array(
+			'drop_columns'	=> array(
+				$this->table_prefix . 'users'			=> array(
+					'user_scl_enabled',
+					'user_snow_enabled',
+				),
+			),
 		);
 	}
 }
