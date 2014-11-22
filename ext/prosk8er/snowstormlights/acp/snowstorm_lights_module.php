@@ -10,7 +10,7 @@
 
 namespace prosk8er\snowstormlights\acp;
 
-class snowstorm_light_module
+class snowstorm_lights_module
 {
 	var $u_action;
 

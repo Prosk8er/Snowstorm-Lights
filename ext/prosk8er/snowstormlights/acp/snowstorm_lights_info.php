@@ -10,7 +10,7 @@
 
 namespace prosk8er\snowstormlights\acp;
 
-class board_announcements_info
+class snowstorm_lights_info
 {
 	function module()
 	{
