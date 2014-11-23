@@ -23,17 +23,21 @@
 		<dl>
 			<dt><label for="snow_enabled">{L_SNOW_ENABLED}{L_COLON}</label></dt>
 			<dd>
-				<label><input type="radio" class="radio" id="snow_enabled" name="snow_enabled" value="1" <!-- IF SNOW_ENABLED -->checked="checked"<!-- ENDIF -->/> {L_YES}</label>
-				<label><input type="radio" class="radio" name="snow_enabled" value="0" <!-- IF not SNOW_ENABLED -->checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+				<label><input type="radio" class="radio" id="snow_enabled" name="snow_enabled" value="1"<!-- IF SNOW_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+				<label><input type="radio" class="radio" name="snow_enabled" value="0"<!-- IF not SNOW_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
 			</dd>
 		</dl>
 	</fieldset>
 
-	<p class="submit-buttons">
-		<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
-		<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
-	</p>
-	{S_FORM_TOKEN}
+	<fieldset>
+		<legend>{L_ACP_SUBMIT_CHANGES}</legend>
+		<p class="submit-buttons">
+			<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+			<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+		</p>
+		{S_FORM_TOKEN}
+	</fieldset>
+
 </form>
 
 <!-- INCLUDE overall_footer.html -->

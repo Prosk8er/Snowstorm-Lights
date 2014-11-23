@@ -78,10 +78,10 @@ class listener implements EventSubscriberInterface
 	public function assign_to_template($event)
 	{
 		$this->template->assign_vars(array(
-			'S_SCL_ENABLED'		=> (!empty($this->config['scl_enabled'])) ? true : false,
-			'S_SCL_UCP_ENABLED'	=> (!empty($this->user->data['user_scl_enabled'])) ? true : false,
-			'S_SNOW_ENABLED'	=> (!empty($this->config['snow_enabled'])) ? true : false,
-			'S_SNOW_UCP_ENABLED'	=> (!empty($this->user->data['user_snow_enabled'])) ? true : false,
+			'S_SCL_ENABLED'		=> isset($this->config['scl_enabled']) ? $this->config['scl_enabled'] : '',
+			'S_SCL_UCP_ENABLED'	=> isset($this->user->data['user_scl_enabled']) ? $this->user->data['user_scl_enabled'] : '',
+			'S_SNOW_ENABLED'	=> isset($this->config['snow_enabled']) ? $this->config['snow_enabled'] : '',
+			'S_SNOW_UCP_ENABLED'	=> isset($this->user->data['user_snow_enabled']) ? $this->user->data['user_snow_enabled'] : '',
 		));
 	}
 
@@ -90,8 +90,8 @@ class listener implements EventSubscriberInterface
 		$data = $event['data'];
 
 		$data = array_merge($data, array(
-			'scl_ucp_enabled'	=> $request->variable('scl_ucp_enabled', (bool) $this->user->data['user_scl_enabled']),
-			'snow_ucp_enabled'	=> $request->variable('snow_ucp_enabled', (bool) $this->user->data['user_snow_enabled']),
+			'scl_ucp_enabled'	=> $this->request->variable('scl_ucp_enabled', (bool) $this->user->data['user_scl_enabled']),
+			'snow_ucp_enabled'	=> $this->request->variable('snow_ucp_enabled', (bool) $this->user->data['user_snow_enabled']),
 		));
 
 		$event['data'] = $data;
