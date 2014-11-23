@@ -5,6 +5,7 @@
 	"homepage": "https://github.com/Prosk8er/Snowstorm-Lights",
 	"version": "1.0.0",
 	"time": "2014-11-17",
+	"keywords": ["phpbb", "extension", "snowstorm", "lights"],
 	"license": "GPL-2.0",
 	"authors": [
 		{
@@ -12,6 +13,12 @@
 			"email": "prosk8er@gotskillslounge.com",
 			"homepage": "http://gotskillslounge.com",
 			"role": "Lead Developer"
+		},
+		{
+			"name": "Rich McGirr",
+			"email": "rmcgirr83@rmcgirr83.org",
+			"homepage": "http://rmcgirr83.org/",
+			"role": "Contributor"
 		}
 	],
 	"require": {
