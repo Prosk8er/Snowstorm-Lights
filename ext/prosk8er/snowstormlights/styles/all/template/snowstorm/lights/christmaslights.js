@@ -442,7 +442,7 @@ function XLSF(oTarget,urlBase) {
 }
 
 var xlsf = null;
-var urlBase = null;
+//var urlBase = null;
 
 function smashInit() {
   if (navigator.userAgent.match(/msie 6/i)) {
