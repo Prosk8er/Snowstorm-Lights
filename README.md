@@ -6,10 +6,9 @@ Adds a Snowstorm and smashable christmas lights to your forum.
 Actual code written by http://www.schillmania.com/projects/snowstorm/ I just made it a mod for phpBB.
 
 ## Installation:
-• Download the latest release and unzip it.
-• Copy the entire contents from the unzipped folder to "phpBB/".
-• Navigate in the ACP to "Customise -> Manage extensions".
-• Find "Snowstorm & Lights Extension" under "Disabled Extensions" and click "Enable".
+#• Copy the entire contents from the unzipped folder to "phpBB/".
+#• Navigate in the ACP to "Customise -> Manage extensions".
+#• Find "Snowstorm & Lights Extension" under "Disabled Extensions" and click "Enable".
 
 ## Uninstallation:
 • Navigate in the ACP to "Customise -> Manage extensions".
