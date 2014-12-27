@@ -57,7 +57,6 @@ class release_1_0_0 extends \phpbb\db\migration\migration
 			array('config.remove', array('snow_enabled')),
 			array('config.remove', array('snowstorm_lights_version')),
 
-
 			array('module.remove', array(
 				'acp',
 				'ACP_SNOWSTORM_LIGHTS',
