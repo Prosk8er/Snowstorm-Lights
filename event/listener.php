@@ -61,7 +61,6 @@ class listener implements EventSubscriberInterface
 			'core.page_header_after'		=> 'assign_to_template',
 			'core.ucp_prefs_personal_data'		=> 'ucp_prefs_personal_data',
 			'core.ucp_prefs_personal_update_data'	=> 'ucp_prefs_personal_update_data',
-			'core.ucp_prefs_view_update_data'	=> 'ucp_prefs_view_update_data',
 		);
 	}
 
@@ -105,19 +104,6 @@ class listener implements EventSubscriberInterface
 		$sql_ary = array_merge($sql_ary, array(
 			'user_scl_enabled'	=> $data['scl_ucp_enabled'],
 			'user_snow_enabled'	=> $data['snow_ucp_enabled'],
-		));
-
-		$event['sql_ary'] = $sql_ary;
-	}
-
-	public function ucp_prefs_view_update_data($event)
-	{
-		$data = $event['data'];
-		$sql_ary = $event['sql_ary'];
-
-		$sql_ary = array_merge($sql_ary, array(
-			'S_SCL_UCP_ENABLED'	=> $data['scl_ucp_enabled'],
-			'S_SNOW_UCP_ENABLED'	=> $data['snow_ucp_enabled'],
 		));
 
 		$event['sql_ary'] = $sql_ary;
