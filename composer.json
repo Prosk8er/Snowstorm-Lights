@@ -23,7 +23,8 @@
 	],
 	"require": {
 		"php": ">=5.3.3",
-		"composer/installers": "~1.0"
+		"composer/installers": "~1.0",
+		"phpbb/phpbb": ">=3.1.0"
 	},
 	"require-dev": {
 		"phpbb/epv": "dev-master"
@@ -31,7 +32,7 @@
 	"extra": {
 		"display-name": "Snowstorm & Lights",
 		"soft-require": {
-			"phpbb/phpbb": ">=3.1.0,<3.2.*@dev"
+			"phpbb/phpbb": ">=3.1.0"
 		},
 		"version-check": {
 			"host": "version.gotskillslounge.com",
