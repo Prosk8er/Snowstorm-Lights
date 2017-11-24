@@ -1,6 +1,6 @@
 #Snowstorm-Lights
 
-Mod for phpBB 3.1.x
+Mod for phpBB 3.2.x
 Adds a Snowstorm and smashable christmas lights to your forum.
 Actual code written by http://www.schillmania.com/projects/snowstorm/ I just made it a mod for phpBB.
 
@@ -26,4 +26,4 @@ Actual code written by http://www.schillmania.com/projects/snowstorm/ I just mad
 
 ## License
 
-[GPLv2](license.txt)
+[GNU General Public License v2](license.txt)
