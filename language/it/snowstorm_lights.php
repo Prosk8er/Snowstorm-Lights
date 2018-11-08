@@ -6,7 +6,6 @@
 * @copyright (c) 2018 Prosk8er <http://www.gotskillslounge.com>
 * @license GNU General Public License, version 2 (GPL-2.0)
 *
-* Translated By : Bassel Taha Alhitary - www.alhitary.net
 */
 
 /**
@@ -39,8 +38,8 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-	'SCL_ENABLED'			=> 'تفعيل المصابيح ',
-	'SCL_ENABLED_EXPLAIN'		=> 'تفعيل أو تعطيل المصابيح التي يُمكن تحطيمها.',
-	'SNOW_ENABLED'			=> 'تفعيل العاصفة الثلجية ',
-	'SNOW_ENABLED_EXPLAIN'		=> 'تفعيل أو تعطيل العاصفة الثلجية.',
+	'SCL_ENABLED'			=> 'Attiva serie frangibile',
+	'SCL_ENABLED_EXPLAIN'		=> 'Attiva le luci natalizie frangibili.',
+	'SNOW_ENABLED'			=> 'Attiva bufera',
+	'SNOW_ENABLED_EXPLAIN'		=> 'Attiva la bufera di neve.',
 ));

@@ -6,7 +6,6 @@
 * @copyright (c) 2018 Prosk8er <http://www.gotskillslounge.com>
 * @license GNU General Public License, version 2 (GPL-2.0)
 *
-* Translated By : Bassel Taha Alhitary - www.alhitary.net
 */
 
 /**
@@ -39,8 +38,11 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-	'SCL_ENABLED'			=> 'تفعيل المصابيح ',
-	'SCL_ENABLED_EXPLAIN'		=> 'تفعيل أو تعطيل المصابيح التي يُمكن تحطيمها.',
-	'SNOW_ENABLED'			=> 'تفعيل العاصفة الثلجية ',
-	'SNOW_ENABLED_EXPLAIN'		=> 'تفعيل أو تعطيل العاصفة الثلجية.',
+	'ACP_SNOWSTORM_LIGHTS'		=> 'Bufera e luci natalizie',
+	'ACP_SNOWSTORM_LIGHTS_SETTINGS'	=> 'Impostazioni',
+	'SCL_ENABLED'			=> 'Abilita “Bufera e luci natalizie”',
+	'SNOW_ENABLED'			=> 'Abilita “Bufera di neve”',
+	'SNOWSTORM_LIGHTS'		=> 'Bufera e luci natalizie',
+	'SNOWSTORM_LIGHTS_EXPLAIN'	=> 'Pagina di configurazione per l’estensione “Bufera e luci natalizie”.',
+	'SNOWSTORM_LIGHTS_SAVED'	=> 'Modifiche salvate.',
 ));
