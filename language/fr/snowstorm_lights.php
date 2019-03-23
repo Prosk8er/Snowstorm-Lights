@@ -4,7 +4,7 @@
  * Snowstorm & Lights. An extension for the phpBB Forum Software package.
  * French translation by Galixte (http://www.galixte.com)
  *
- * @copyright (c) 2018 Prosk8er <http://www.gotskillslounge.com>
+ * @copyright (c) 2019 Prosk8er <http://www.gotskillslounge.com>
  * @license GNU General Public License, version 2 (GPL-2.0)
  *
  */
