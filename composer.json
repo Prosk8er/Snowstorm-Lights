@@ -30,7 +30,7 @@
 		"phing/phing": "2.4.*"
 	},
 	"extra": {
-		"display-name": "Snowstorm & Lights",
+		"display-name": "Snowstorm and Lights",
 		"soft-require": {
 			"phpbb/phpbb": ">=3.2.0,<4.0.0@dev"
 		},

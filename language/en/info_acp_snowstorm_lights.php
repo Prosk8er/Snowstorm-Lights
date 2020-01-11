@@ -1,7 +1,7 @@
 <?php
 /**
 *
-* Snowstorm & Lights extension for the phpBB Forum Software package.
+* Snowstorm and Lights extension for the phpBB Forum Software package.
 *
 * @copyright (c) 2020 Prosk8er <http://www.gotskillslounge.com>
 * @license GNU General Public License, version 2 (GPL-2.0)
@@ -38,11 +38,11 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-	'ACP_SNOWSTORM_LIGHTS'		=> 'Snowstorm & Lights',
-	'ACP_SNOWSTORM_LIGHTS_SETTINGS'	=> 'Snowstorm & Lights Settings',
+	'ACP_SNOWSTORM_LIGHTS'		=> 'Snowstorm and Lights',
+	'ACP_SNOWSTORM_LIGHTS_SETTINGS'	=> 'Snowstorm and Lights Settings',
 	'SCL_ENABLED'			=> 'Enable "Smashable Christmas Lights"',
 	'SNOW_ENABLED'			=> 'Enable "Snowstorm"',
-	'SNOWSTORM_LIGHTS'		=> 'Snowstorm & Lights',
-	'SNOWSTORM_LIGHTS_EXPLAIN'	=> 'Configure Snowstorm & Lights.',
+	'SNOWSTORM_LIGHTS'		=> 'Snowstorm and Lights',
+	'SNOWSTORM_LIGHTS_EXPLAIN'	=> 'Configure Snowstorm and Lights.',
 	'SNOWSTORM_LIGHTS_SAVED'	=> 'Changes Saved.',
 ));

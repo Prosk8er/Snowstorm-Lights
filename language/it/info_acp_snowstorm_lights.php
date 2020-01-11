@@ -1,7 +1,7 @@
 <?php
 /**
 *
-* Snowstorm & Lights extension for the phpBB Forum Software package.
+* Snowstorm and Lights extension for the phpBB Forum Software package.
 *
 * @copyright (c) 2020 Prosk8er <http://www.gotskillslounge.com>
 * @license GNU General Public License, version 2 (GPL-2.0)

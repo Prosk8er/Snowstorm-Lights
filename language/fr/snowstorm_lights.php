@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Snowstorm & Lights. An extension for the phpBB Forum Software package.
+ * Snowstorm and Lights. An extension for the phpBB Forum Software package.
  * French translation by Galixte (http://www.galixte.com)
  *
  * @copyright (c) 2020 Prosk8er <http://www.gotskillslounge.com>
