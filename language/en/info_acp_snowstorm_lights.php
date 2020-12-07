@@ -42,6 +42,7 @@ $lang = array_merge($lang, array(
 	'ACP_SNOWSTORM_LIGHTS_SETTINGS'	=> 'Snowstorm and Lights Settings',
 	'SCL_ENABLED'			=> 'Enable "Smashable Christmas Lights"',
 	'SNOW_ENABLED'			=> 'Enable "Snowstorm"',
+	'SANTAHAT_ENABLED'			=> 'Enable "Santa Hat"',
 	'SNOWSTORM_LIGHTS'		=> 'Snowstorm and Lights',
 	'SNOWSTORM_LIGHTS_EXPLAIN'	=> 'Configure Snowstorm and Lights.',
 	'SNOWSTORM_LIGHTS_SAVED'	=> 'Changes Saved.',

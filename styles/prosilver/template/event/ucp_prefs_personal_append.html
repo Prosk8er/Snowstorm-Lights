@@ -17,3 +17,13 @@
 			</dd>
 		</dl>
 	<!-- ENDIF -->
+
+	<!-- IF S_SANTAHAT_ENABLED -->
+		<dl>
+			<dt><label for="santahat_ucp_enabled0">{L_SANTAHAT_ENABLED}{L_COLON}</label><br /><span>{L_SANTAHAT_ENABLED_EXPLAIN}</span></dt>
+			<dd>
+				<label for="santahat_ucp_enabled1"><input type="radio" name="santahat_ucp_enabled" id="santahat_ucp_enabled1" value="1"<!-- IF S_SANTAHAT_UCP_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+				<label for="santahat_ucp_enabled0"><input type="radio" name="santahat_ucp_enabled" id="santahat_ucp_enabled0" value="0"<!-- IF not S_SANTAHAT_UCP_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+			</dd>
+		</dl>
+	<!-- ENDIF -->

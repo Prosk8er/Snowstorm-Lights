@@ -68,6 +68,9 @@ class snowstorm_lights_module
 			$snow_enabled = $request->variable('snow_enabled', 0);
 			$this->config->set('snow_enabled', $snow_enabled);
 
+			$santahat_enabled = $request->variable('santahat_enabled', 0);
+			$this->config->set('santahat_enabled', $santahat_enabled);
+
 			// Output message to user for the update
 			trigger_error($this->user->lang('SNOWSTORM_LIGHTS_SAVED') . adm_back_link($this->u_action));
 		}
@@ -76,6 +79,7 @@ class snowstorm_lights_module
 		$this->template->assign_vars(array(
 			'SCL_ENABLED'		=> isset($this->config['scl_enabled']) ? $this->config['scl_enabled'] : '',
 			'SNOW_ENABLED'		=> isset($this->config['snow_enabled']) ? $this->config['snow_enabled'] : '',
+			'SANTAHAT_ENABLED'	=> isset($this->config['santahat_enabled']) ? $this->config['santahat_enabled'] : '',
 			'U_ACTION'		=> $this->u_action,
 		));
 	}

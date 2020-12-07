@@ -42,4 +42,6 @@ $lang = array_merge($lang, array(
 	'SCL_ENABLED_EXPLAIN'		=> 'Enables or disables the Smashable Christmas Lights.',
 	'SNOW_ENABLED'			=> 'Enable Snowstorm',
 	'SNOW_ENABLED_EXPLAIN'		=> 'Enables or disables the Snowstorm.',
+	'SANTAHAT_ENABLED'			=> 'Enable Santa Hat',
+	'SANTAHAT_ENABLED_EXPLAIN'		=> 'Enables or disables the Santa Hat.',
 ));
