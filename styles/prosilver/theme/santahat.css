@@ -3,6 +3,9 @@
 	height: 128px;
 	width: 128px;
 	margin: -16px 0 0 -52px;
-    position: absolute;
+	position: absolute;
 	pointer-events: none;
+}
+.logo {
+	text-indent: 20px;
 }
