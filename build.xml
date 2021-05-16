@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Advertisement management Build Script" description="Builds an extension.zip from a git repository" default="all">
+<project name="Snowstorm and Lights Build Script" description="Builds an extension.zip from a git repository" default="all">
 	<property name="vendor-name" value="prosk8er" />
 	<property name="extension-name" value="snowstormlights" />
 	<!--
@@ -14,12 +14,10 @@
 		${dir}/ is the folder of your extension, e.g. ext/acme/demo/
 		-->
 		<delete dir="${dir}/tests" />
-		<delete dir="${dir}/travis" />
 		<delete dir="${dir}/.github" />
 
 		<delete file="${dir}/.gitignore" />
 		<delete file="${dir}/.gitattributes" />
-		<delete file="${dir}/.travis.yml" />
 		<delete file="${dir}/build.xml" />
 		<delete file="${dir}/composer.lock" />
 		<delete file="${dir}/composer.phar" />
