@@ -4,7 +4,7 @@
 	"description": "Adds a Snowstorm and smashable christmas lights to your forum.",
 	"homepage": "https://github.com/Prosk8er/Snowstorm-Lights",
 	"version": "1.0.3",
-	"time": "2021-06-29",
+	"time": "2021-08-06",
 	"keywords": ["phpbb", "extension", "snowstorm", "lights"],
 	"license": "GPL-2.0-only",
 	"authors": [
@@ -38,6 +38,7 @@
 			"host": "www.gotskillslounge.com",
 			"directory": "version/phpbb-extensions",
 			"filename": "snowstormlights_versions.json"
+			"ssl": true
 		}
 	}
 }

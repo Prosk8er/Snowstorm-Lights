@@ -3,7 +3,7 @@
 *
 * Snowstorm and Lights extension for the phpBB Forum Software package.
 *
-* @copyright (c) 2020 Prosk8er <http://www.gotskillslounge.com>
+* @copyright (c) 2021 Prosk8er <https://www.gotskillslounge.com>
 * @license GNU General Public License, version 2 (GPL-2.0)
 *
 */
@@ -42,6 +42,6 @@ $lang = array_merge($lang, array(
 	'SCL_ENABLED_EXPLAIN'		=> 'Enables or disables the Smashable Christmas Lights.',
 	'SNOW_ENABLED'			=> 'Enable Snowstorm',
 	'SNOW_ENABLED_EXPLAIN'		=> 'Enables or disables the Snowstorm.',
-	'SANTAHAT_ENABLED'			=> 'Enable Santa Hat',
-	'SANTAHAT_ENABLED_EXPLAIN'		=> 'Enables or disables the Santa Hat.',
+	'SANTAHAT_ENABLED'		=> 'Enable Santa Hat',
+	'SANTAHAT_ENABLED_EXPLAIN'	=> 'Enables or disables the Santa Hat.',
 ));

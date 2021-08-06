@@ -3,7 +3,7 @@
 *
 * Snowstorm and Lights extension for the phpBB Forum Software package.
 *
-* @copyright (c) 2020 Prosk8er <http://www.gotskillslounge.com>
+* @copyright (c) 2021 Prosk8er <https://www.gotskillslounge.com>
 * @license GNU General Public License, version 2 (GPL-2.0)
 *
 */

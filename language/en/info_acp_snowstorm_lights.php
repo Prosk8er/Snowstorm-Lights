@@ -3,7 +3,7 @@
 *
 * Snowstorm and Lights extension for the phpBB Forum Software package.
 *
-* @copyright (c) 2020 Prosk8er <http://www.gotskillslounge.com>
+* @copyright (c) 2021 Prosk8er <https://www.gotskillslounge.com>
 * @license GNU General Public License, version 2 (GPL-2.0)
 *
 */
@@ -42,7 +42,7 @@ $lang = array_merge($lang, array(
 	'ACP_SNOWSTORM_LIGHTS_SETTINGS'	=> 'Snowstorm and Lights Settings',
 	'SCL_ENABLED'			=> 'Enable "Smashable Christmas Lights"',
 	'SNOW_ENABLED'			=> 'Enable "Snowstorm"',
-	'SANTAHAT_ENABLED'			=> 'Enable "Santa Hat"',
+	'SANTAHAT_ENABLED'		=> 'Enable "Santa Hat"',
 	'SNOWSTORM_LIGHTS'		=> 'Snowstorm and Lights',
 	'SNOWSTORM_LIGHTS_EXPLAIN'	=> 'Configure Snowstorm and Lights.',
 	'SNOWSTORM_LIGHTS_SAVED'	=> 'Changes Saved.',
