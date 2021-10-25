@@ -5,7 +5,7 @@ Adds a Snowstorm and smashable christmas lights to your forum.
 Actual code written by http://www.schillmania.com/projects/snowstorm/ I made it a extension for phpBB.
 
 [![Build Status](https://github.com/Prosk8er/Snowstorm-Lights/workflows/Tests/badge.svg)](https://github.com/Prosk8er/Snowstorm-Lights/actions)
-https://img.shields.io/badge/phpBB-3.3.x%20Compatible%20-blue.svg https://img.shields.io/badge/phpBB-3.2.x%20Compatible%20-blue.svg
+![Alt text](https://img.shields.io/badge/phpBB-3.3.x%20Compatible%20-blue.svg) ![Alt text](https://img.shields.io/badge/phpBB-3.2.x%20Compatible%20-blue.svg)
 
 ## Installation:
     • Copy the entire contents from the unzipped folder to "phpBB/ext/prosk8er/snowstormlights/".
