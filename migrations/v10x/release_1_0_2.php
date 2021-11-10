@@ -1,10 +1,9 @@
 <?php
 /**
 *
-* Snowstorm and Lights extension for the phpBB Forum Software package.
-*
+* @package Snowstorm and Lights
 * @copyright (c) 2021 Prosk8er <https://www.gotskillslounge.com>
-* @license GNU General Public License, version 2 (GPL-2.0)
+* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
 
@@ -19,20 +18,20 @@ class release_1_0_2 extends \phpbb\db\migration\migration
 
 	static public function depends_on()
 	{
-		return array('\prosk8er\snowstormlights\migrations\v10x\release_1_0_1');
+		return ['\prosk8er\snowstormlights\migrations\v10x\release_1_0_1'];
 	}
 
 	public function update_data()
 	{
-		return array(
-			array('config.update', array('snowstorm_lights_version', '1.0.2')),
-		);
+		return [
+			['config.update', ['snowstorm_lights_version', '1.0.2']],
+		];
 	}
 
 	public function revert_data()
 	{
-		return array(
-			array('config.remove', array('snowstorm_lights_version')),
-		);
+		return [
+			['config.remove', ['snowstorm_lights_version']],
+		];
 	}
 }

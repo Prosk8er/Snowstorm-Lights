@@ -1,10 +1,9 @@
 <?php
 /**
 *
-* Snowstorm and Lights extension for the phpBB Forum Software package.
-*
+* @package Snowstorm and Lights
 * @copyright (c) 2021 Prosk8er <https://www.gotskillslounge.com>
-* @license GNU General Public License, version 2 (GPL-2.0)
+* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
 
@@ -14,16 +13,16 @@ class snowstorm_lights_info
 {
 	function module()
 	{
-		return array(
+		return [
 			'filename'	=> '\prosk8er\snowstormlights\acp\snowstorm_lights_module',
 			'title'		=> 'ACP_SNOWSTROM_LIGHTS',
-			'modes'		=> array(
-				'settings'	=> array(
+			'modes'		=> [
+				'settings'	=> [
 					'title' => 'ACP_SNOWSTORM_LIGHTS_SETTINGS',
 					'auth' => 'ext_prosk8er/snowstormlights && acl_a_board',
-					'cat' => array('ACP_SNOWSTROM_LIGHTS')
-				),
-			),
-		);
+					'cat' => ['ACP_SNOWSTROM_LIGHTS']
+				],
+			],
+		];
 	}
 }

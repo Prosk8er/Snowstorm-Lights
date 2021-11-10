@@ -9,22 +9,22 @@
 
 namespace prosk8er\snowstormlights\migrations\v10x;
 
-class release_1_0_1 extends \phpbb\db\migration\migration
+class release_1_0_4 extends \phpbb\db\migration\migration
 {
 	public function effectively_installed()
 	{
-		return version_compare($this->config['snowstorm_lights_version'], '1.0.1', '>=');
+		return version_compare($this->config['snowstorm_lights_version'], '1.0.4', '>=');
 	}
 
 	static public function depends_on()
 	{
-		return ['\prosk8er\snowstormlights\migrations\v10x\release_1_0_0'];
+		return ['\prosk8er\snowstormlights\migrations\v10x\release_1_0_3'];
 	}
 
 	public function update_data()
 	{
 		return [
-			['config.update', ['snowstorm_lights_version', '1.0.1']],
+			['config.update', ['snowstorm_lights_version', '1.0.4']],
 		];
 	}
 

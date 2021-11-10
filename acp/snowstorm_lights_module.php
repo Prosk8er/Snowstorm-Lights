@@ -1,10 +1,9 @@
 <?php
 /**
 *
-* Snowstorm and Lights extension for the phpBB Forum Software package.
-*
+* @package Snowstorm and Lights
 * @copyright (c) 2021 Prosk8er <https://www.gotskillslounge.com>
-* @license GNU General Public License, version 2 (GPL-2.0)
+* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
 
@@ -37,7 +36,7 @@ class snowstorm_lights_module
 		$this->user = $user;
 
 		// Add the common lang file
-		$this->user->add_lang(array('acp/common'));
+		$this->user->add_lang(['acp/common']);
 
 		// Add the board snowstormlights ACP lang file
 		$this->user->add_lang_ext('prosk8er/snowstormlights', 'info_acp_snowstorm_lights');
@@ -76,11 +75,11 @@ class snowstorm_lights_module
 		}
 
 		// Output data to the template
-		$this->template->assign_vars(array(
-			'SCL_ENABLED'		=> isset($this->config['scl_enabled']) ? $this->config['scl_enabled'] : '',
-			'SNOW_ENABLED'		=> isset($this->config['snow_enabled']) ? $this->config['snow_enabled'] : '',
-			'SANTAHAT_ENABLED'	=> isset($this->config['santahat_enabled']) ? $this->config['santahat_enabled'] : '',
+		$this->template->assign_vars([
+			'SCL_ENABLED'		=> $this->config['scl_enabled'],
+			'SNOW_ENABLED'		=> $this->config['snow_enabled'],
+			'SANTAHAT_ENABLED'	=> $this->config['santahat_enabled'],
 			'U_ACTION'		=> $this->u_action,
-		));
+		]);
 	}
 }

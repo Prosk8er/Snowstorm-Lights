@@ -1,10 +1,9 @@
 <?php
 /**
 *
-* Snowstorm and Lights extension for the phpBB Forum Software package.
-*
+* @package Snowstorm and Lights
 * @copyright (c) 2021 Prosk8er <https://www.gotskillslounge.com>
-* @license GNU General Public License, version 2 (GPL-2.0)
+* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
 
@@ -56,45 +55,45 @@ class listener implements EventSubscriberInterface
 	*/
 	static public function getSubscribedEvents()
 	{
-		return array(
+		return [
 			'core.user_setup'			=> 'load_language_on_setup',
 			'core.page_header_after'		=> 'assign_to_template',
 			'core.ucp_prefs_personal_data'		=> 'ucp_prefs_personal_data',
 			'core.ucp_prefs_personal_update_data'	=> 'ucp_prefs_personal_update_data',
-		);
+		];
 	}
 
 	public function load_language_on_setup($event)
 	{
 		$lang_set_ext = $event['lang_set_ext'];
-		$lang_set_ext[] = array(
+		$lang_set_ext[] = [
 			'ext_name' => 'prosk8er/snowstormlights',
 			'lang_set' => 'snowstorm_lights',
-		);
+		];
 		$event['lang_set_ext'] = $lang_set_ext;
 	}
 
 	public function assign_to_template($event)
 	{
-		$this->template->assign_vars(array(
+		$this->template->assign_vars([
 			'S_SCL_ENABLED'			=> isset($this->config['scl_enabled']) ? $this->config['scl_enabled'] : '',
 			'S_SCL_UCP_ENABLED'		=> isset($this->user->data['user_scl_enabled']) ? $this->user->data['user_scl_enabled'] : '',
 			'S_SNOW_ENABLED'		=> isset($this->config['snow_enabled']) ? $this->config['snow_enabled'] : '',
 			'S_SNOW_UCP_ENABLED'		=> isset($this->user->data['user_snow_enabled']) ? $this->user->data['user_snow_enabled'] : '',
 			'S_SANTAHAT_ENABLED'		=> isset($this->config['santahat_enabled']) ? $this->config['santahat_enabled'] : '',
 			'S_SANTAHAT_UCP_ENABLED'	=> isset($this->user->data['user_santahat_enabled']) ? $this->user->data['user_santahat_enabled'] : '',
-		));
+		]);
 	}
 
 	public function ucp_prefs_personal_data($event)
 	{
 		$data = $event['data'];
 
-		$data = array_merge($data, array(
+		$data = array_merge($data, [
 			'scl_ucp_enabled'	=> $this->request->variable('scl_ucp_enabled', (bool) $this->user->data['user_scl_enabled']),
 			'snow_ucp_enabled'	=> $this->request->variable('snow_ucp_enabled', (bool) $this->user->data['user_snow_enabled']),
 			'santahat_ucp_enabled'	=> $this->request->variable('santahat_ucp_enabled', (bool) $this->user->data['user_santahat_enabled']),
-		));
+		]);
 
 		$event['data'] = $data;
 	}
@@ -104,11 +103,11 @@ class listener implements EventSubscriberInterface
 		$data = $event['data'];
 		$sql_ary = $event['sql_ary'];
 
-		$sql_ary = array_merge($sql_ary, array(
+		$sql_ary = array_merge($sql_ary, [
 			'user_scl_enabled'	=> $data['scl_ucp_enabled'],
 			'user_snow_enabled'	=> $data['snow_ucp_enabled'],
 			'user_santahat_enabled'	=> $data['santahat_ucp_enabled'],
-		));
+		]);
 
 		$event['sql_ary'] = $sql_ary;
 	}
