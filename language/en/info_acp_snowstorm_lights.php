@@ -17,7 +17,7 @@ if (!defined('IN_PHPBB'))
 
 if (empty($lang) || !is_array($lang))
 {
-	$lang = array();
+	$lang = [];
 }
 
 // DEVELOPERS PLEASE NOTE
@@ -36,7 +36,7 @@ if (empty($lang) || !is_array($lang))
 // ’ » “ ” …
 //
 
-$lang = array_merge($lang, array(
+$lang = array_merge($lang, [
 	'ACP_SNOWSTORM_LIGHTS'		=> 'Snowstorm and Lights',
 	'ACP_SNOWSTORM_LIGHTS_SETTINGS'	=> 'Snowstorm and Lights Settings',
 	'SCL_ENABLED'			=> 'Enable “Smashable Christmas Lights”',
@@ -45,4 +45,4 @@ $lang = array_merge($lang, array(
 	'SNOWSTORM_LIGHTS'		=> 'Snowstorm and Lights',
 	'SNOWSTORM_LIGHTS_EXPLAIN'	=> 'Configure Snowstorm and Lights.',
 	'SNOWSTORM_LIGHTS_SAVED'	=> 'Changes Saved.',
-));
+]);
