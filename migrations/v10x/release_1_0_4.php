@@ -21,9 +21,21 @@ class release_1_0_4 extends \phpbb\db\migration\migration
 		return ['\prosk8er\snowstormlights\migrations\v10x\release_1_0_3'];
 	}
 
+	public function update_schema()
+	{
+		return [
+			'add_columns'	=> [
+				$this->table_prefix . 'users'	=> [
+					'user_snowbg_enabled' => ['BOOL', 1],
+				],
+			],
+		];
+	}
+
 	public function update_data()
 	{
 		return [
+			['config.add', ['snowbg_enabled', 0]],
 			['config.update', ['snowstorm_lights_version', '1.0.4']],
 		];
 	}
@@ -31,7 +43,19 @@ class release_1_0_4 extends \phpbb\db\migration\migration
 	public function revert_data()
 	{
 		return [
+			['config.remove', ['snowbg_enabled']],
 			['config.remove', ['snowstorm_lights_version']],
+		];
+	}
+
+	public function revert_schema()
+	{
+		return [
+			'drop_columns'	=> [
+				$this->table_prefix . 'users'	=> [
+					'user_snowbg_enabled',
+				],
+			],
 		];
 	}
 }

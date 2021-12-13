@@ -18,6 +18,16 @@
 		</dl>
 	{% endif %}
 
+	{% if S_SNOWBG_ENABLED %}
+		<dl>
+			<dt><label for="snowbg_ucp_enabled0">{{ lang('SNOWBG_ENABLED') ~ lang('COLON') }}</label><br /><span>{{ lang('SNOWBG_ENABLED_EXPLAIN') }}</span></dt>
+			<dd>
+				<label for="snowbg_ucp_enabled1"><input type="radio" name="snowbg_ucp_enabled" id="snowbg_ucp_enabled1" value="1"{% if S_SNOWBG_UCP_ENABLED %} checked="checked"{% endif %} /> {{ lang('YES') }}</label> 
+				<label for="snowbg_ucp_enabled0"><input type="radio" name="snowbg_ucp_enabled" id="snowbg_ucp_enabled0" value="0"{% if not S_SNOWBG_UCP_ENABLED %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+	{% endif %}
+
 	{% if S_SANTAHAT_ENABLED %}
 		<dl>
 			<dt><label for="santahat_ucp_enabled0">{{ lang('SANTAHAT_ENABLED') ~ lang('COLON') }}</label><br /><span>{{ lang('SANTAHAT_ENABLED_EXPLAIN') }}</span></dt>
