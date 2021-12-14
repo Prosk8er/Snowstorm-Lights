@@ -27,6 +27,7 @@ class release_1_0_4 extends \phpbb\db\migration\migration
 			'add_columns'	=> [
 				$this->table_prefix . 'users'	=> [
 					'user_snowbg_enabled' => ['BOOL', 1],
+					'user_snowcss_enabled' => ['BOOL', 1],
 				],
 			],
 		];
@@ -36,6 +37,7 @@ class release_1_0_4 extends \phpbb\db\migration\migration
 	{
 		return [
 			['config.add', ['snowbg_enabled', 0]],
+			['config.add', ['snowcss_enabled', 0]],
 			['config.update', ['snowstorm_lights_version', '1.0.4']],
 		];
 	}
@@ -44,6 +46,7 @@ class release_1_0_4 extends \phpbb\db\migration\migration
 	{
 		return [
 			['config.remove', ['snowbg_enabled']],
+			['config.remove', ['snowcss_enabled']],
 			['config.remove', ['snowstorm_lights_version']],
 		];
 	}
@@ -54,6 +57,7 @@ class release_1_0_4 extends \phpbb\db\migration\migration
 			'drop_columns'	=> [
 				$this->table_prefix . 'users'	=> [
 					'user_snowbg_enabled',
+					'user_snowcss_enabled',
 				],
 			],
 		];

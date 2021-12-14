@@ -80,6 +80,8 @@ class listener implements EventSubscriberInterface
 			'S_SCL_UCP_ENABLED'		=> isset($this->user->data['user_scl_enabled']) ? $this->user->data['user_scl_enabled'] : '',
 			'S_SNOW_ENABLED'		=> isset($this->config['snow_enabled']) ? $this->config['snow_enabled'] : '',
 			'S_SNOW_UCP_ENABLED'		=> isset($this->user->data['user_snow_enabled']) ? $this->user->data['user_snow_enabled'] : '',
+			'S_SNOWCSS_ENABLED'		=> isset($this->config['snowcss_enabled']) ? $this->config['snowcss_enabled'] : '',
+			'S_SNOWCSS_UCP_ENABLED'		=> isset($this->user->data['user_snowcss_enabled']) ? $this->user->data['user_snowcss_enabled'] : '',
 			'S_SNOWBG_ENABLED'		=> isset($this->config['snowbg_enabled']) ? $this->config['snowbg_enabled'] : '',
 			'S_SNOWBG_UCP_ENABLED'		=> isset($this->user->data['user_snowbg_enabled']) ? $this->user->data['user_snowbg_enabled'] : '',
 			'S_SANTAHAT_ENABLED'		=> isset($this->config['santahat_enabled']) ? $this->config['santahat_enabled'] : '',
@@ -94,6 +96,7 @@ class listener implements EventSubscriberInterface
 		$data = array_merge($data, [
 			'scl_ucp_enabled'	=> $this->request->variable('scl_ucp_enabled', (bool) $this->user->data['user_scl_enabled']),
 			'snow_ucp_enabled'	=> $this->request->variable('snow_ucp_enabled', (bool) $this->user->data['user_snow_enabled']),
+			'snowcss_ucp_enabled'	=> $this->request->variable('snowcss_ucp_enabled', (bool) $this->user->data['user_snowcss_enabled']),
 			'snowbg_ucp_enabled'	=> $this->request->variable('snowbg_ucp_enabled', (bool) $this->user->data['user_snowbg_enabled']),
 			'santahat_ucp_enabled'	=> $this->request->variable('santahat_ucp_enabled', (bool) $this->user->data['user_santahat_enabled']),
 		]);
@@ -109,6 +112,7 @@ class listener implements EventSubscriberInterface
 		$sql_ary = array_merge($sql_ary, [
 			'user_scl_enabled'	=> $data['scl_ucp_enabled'],
 			'user_snow_enabled'	=> $data['snow_ucp_enabled'],
+			'user_snowcss_enabled'	=> $data['snowcss_ucp_enabled'],
 			'user_snowbg_enabled'	=> $data['snowbg_ucp_enabled'],
 			'user_santahat_enabled'	=> $data['santahat_ucp_enabled'],
 		]);

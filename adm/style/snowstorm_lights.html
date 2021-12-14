@@ -31,6 +31,16 @@
 		<br />
 
 		<dl>
+			<dt><label for="snowcss_enabled">{{ lang('SNOWCSS_ENABLED') ~ lang('COLON') }}</label></dt>
+			<dd>
+				<label><input type="radio" class="radio" id="snowcss_enabled" name="snowcss_enabled" value="1"{% if SNOWCSS_ENABLED %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+				<label><input type="radio" class="radio" name="snowcss_enabled" value="0"{% if not SNOWCSS_ENABLED %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+
+		<br />
+
+		<dl>
 			<dt><label for="snowbg_enabled">{{ lang('SNOWBG_ENABLED') ~ lang('COLON') }}</label></dt>
 			<dd>
 				<label><input type="radio" class="radio" id="snowbg_enabled" name="snowbg_enabled" value="1"{% if SNOWBG_ENABLED %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
