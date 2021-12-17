@@ -21,6 +21,16 @@
 		<br />
 
 		<dl>
+			<dt><label for="lightscss_enabled">{{ lang('LIGHTSCSS_ENABLED') ~ lang('COLON') }}</label></dt>
+			<dd>
+				<label><input type="radio" class="radio" id="lightscss_enabled" name="lightscss_enabled" value="1"{% if LIGHTSCSS_ENABLED %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+				<label><input type="radio" class="radio" name="lightscss_enabled" value="0"{% if not LIGHTSCSS_ENABLED %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+
+		<br />
+
+		<dl>
 			<dt><label for="snow_enabled">{{ lang('SNOW_ENABLED') ~ lang('COLON') }}</label></dt>
 			<dd>
 				<label><input type="radio" class="radio" id="snow_enabled" name="snow_enabled" value="1"{% if SNOW_ENABLED %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>

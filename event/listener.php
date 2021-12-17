@@ -78,6 +78,8 @@ class listener implements EventSubscriberInterface
 		$this->template->assign_vars([
 			'S_SCL_ENABLED'			=> isset($this->config['scl_enabled']) ? $this->config['scl_enabled'] : '',
 			'S_SCL_UCP_ENABLED'		=> isset($this->user->data['user_scl_enabled']) ? $this->user->data['user_scl_enabled'] : '',
+			'S_LIGHTSCSS_ENABLED'		=> isset($this->config['lightscss_enabled']) ? $this->config['lightscss_enabled'] : '',
+			'S_LIGHTSCSS_UCP_ENABLED'	=> isset($this->user->data['user_lightscss_enabled']) ? $this->user->data['user_lightscss_enabled'] : '',
 			'S_SNOW_ENABLED'		=> isset($this->config['snow_enabled']) ? $this->config['snow_enabled'] : '',
 			'S_SNOW_UCP_ENABLED'		=> isset($this->user->data['user_snow_enabled']) ? $this->user->data['user_snow_enabled'] : '',
 			'S_SNOWCSS_ENABLED'		=> isset($this->config['snowcss_enabled']) ? $this->config['snowcss_enabled'] : '',
@@ -95,6 +97,7 @@ class listener implements EventSubscriberInterface
 
 		$data = array_merge($data, [
 			'scl_ucp_enabled'	=> $this->request->variable('scl_ucp_enabled', (bool) $this->user->data['user_scl_enabled']),
+			'lightscss_ucp_enabled'	=> $this->request->variable('lightscss_ucp_enabled', (bool) $this->user->data['user_lightscss_enabled']),
 			'snow_ucp_enabled'	=> $this->request->variable('snow_ucp_enabled', (bool) $this->user->data['user_snow_enabled']),
 			'snowcss_ucp_enabled'	=> $this->request->variable('snowcss_ucp_enabled', (bool) $this->user->data['user_snowcss_enabled']),
 			'snowbg_ucp_enabled'	=> $this->request->variable('snowbg_ucp_enabled', (bool) $this->user->data['user_snowbg_enabled']),
@@ -110,11 +113,12 @@ class listener implements EventSubscriberInterface
 		$sql_ary = $event['sql_ary'];
 
 		$sql_ary = array_merge($sql_ary, [
-			'user_scl_enabled'	=> $data['scl_ucp_enabled'],
-			'user_snow_enabled'	=> $data['snow_ucp_enabled'],
-			'user_snowcss_enabled'	=> $data['snowcss_ucp_enabled'],
-			'user_snowbg_enabled'	=> $data['snowbg_ucp_enabled'],
-			'user_santahat_enabled'	=> $data['santahat_ucp_enabled'],
+			'user_scl_enabled'		=> $data['scl_ucp_enabled'],
+			'user_lightscss_enabled'	=> $data['lightscss_ucp_enabled'],
+			'user_snow_enabled'		=> $data['snow_ucp_enabled'],
+			'user_snowcss_enabled'		=> $data['snowcss_ucp_enabled'],
+			'user_snowbg_enabled'		=> $data['snowbg_ucp_enabled'],
+			'user_santahat_enabled'		=> $data['santahat_ucp_enabled'],
 		]);
 
 		$event['sql_ary'] = $sql_ary;

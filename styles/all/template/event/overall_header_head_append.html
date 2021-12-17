@@ -1,6 +1,9 @@
 {% if S_SCL_ENABLED and S_SCL_UCP_ENABLED %}
 	{% INCLUDECSS 'snowstorm/lights/christmaslights.css' %}
 {% endif %}
+{% if S_LIGHTSCSS_ENABLED and S_LIGHTSCSS_UCP_ENABLED %}
+	{% INCLUDECSS '@prosk8er_snowstormlights/lights.css' %}
+{% endif %}
 {% if S_SANTAHAT_ENABLED and S_SANTAHAT_UCP_ENABLED %}
 	{% INCLUDECSS '@prosk8er_snowstormlights/santahat.css' %}
 {% endif %}

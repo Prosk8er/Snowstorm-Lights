@@ -64,6 +64,9 @@ class snowstorm_lights_module
 			$scl_enabled = $this->request->variable('scl_enabled', 0);
 			$this->config->set('scl_enabled', $scl_enabled);
 
+			$lightscss_enabled = $request->variable('lightscss_enabled', 0);
+			$this->config->set('lightscss_enabled', $lightscss_enabled);
+
 			$snow_enabled = $request->variable('snow_enabled', 0);
 			$this->config->set('snow_enabled', $snow_enabled);
 
@@ -83,6 +86,7 @@ class snowstorm_lights_module
 		// Output data to the template
 		$this->template->assign_vars([
 			'SCL_ENABLED'		=> $this->config['scl_enabled'],
+			'LIGHTSCSS_ENABLED'	=> $this->config['lightscss_enabled'],
 			'SNOW_ENABLED'		=> $this->config['snow_enabled'],
 			'SNOWCSS_ENABLED'	=> $this->config['snowcss_enabled'],
 			'SNOWBG_ENABLED'	=> $this->config['snowbg_enabled'],

@@ -39,6 +39,8 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, [
 	'SCL_ENABLED'			=> 'Enable Smashable Christmas Lights',
 	'SCL_ENABLED_EXPLAIN'		=> 'Enables or disables the Smashable Christmas Lights.',
+	'LIGHTSCSS_ENABLED'		=> 'Enable Christmas Lights CSS',
+	'LIGHTSCSS_ENABLED_EXPLAIN'	=> 'Enables or disables the Christmas Lights CSS.',
 	'SNOW_ENABLED'			=> 'Enable Snowstorm',
 	'SNOW_ENABLED_EXPLAIN'		=> 'Enables or disables the Snowstorm.',
 	'SNOWCSS_ENABLED'		=> 'Enable Snowflakes CSS',

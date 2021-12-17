@@ -8,6 +8,16 @@
 		</dl>
 	{% endif %}
 
+	{% if S_LIGHTSCSS_ENABLED %}
+		<dl>
+			<dt><label for="lightscss_ucp_enabled0">{{ lang('LIGHTSCSS_ENABLED') ~ lang('COLON') }}</label><br /><span>{{ lang('LIGHTSCSS_ENABLED_EXPLAIN') }}</span></dt>
+			<dd>
+				<label for="lightscss_ucp_enabled1"><input type="radio" name="lightscss_ucp_enabled" id="lightscss_ucp_enabled1" value="1"{% if S_LIGHTSCSS_UCP_ENABLED %} checked="checked"{% endif %} /> {{ lang('YES') }}</label> 
+				<label for="lightscss_ucp_enabled0"><input type="radio" name="lightscss_ucp_enabled" id="lightscss_ucp_enabled0" value="0"{% if not S_LIGHTSCSS_UCP_ENABLED %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+	{% endif %}
+
 	{% if S_SNOW_ENABLED %}
 		<dl>
 			<dt><label for="snow_ucp_enabled0">{{ lang('SNOW_ENABLED') ~ lang('COLON') }}</label><br /><span>{{ lang('SNOW_ENABLED_EXPLAIN') }}</span></dt>
