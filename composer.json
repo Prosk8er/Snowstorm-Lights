@@ -36,7 +36,7 @@
 		},
 		"version-check": {
 			"host": "www.gotskillslounge.com",
-			"directory": "version/phpbb-extensions",
+			"directory": "/version/phpbb-extensions",
 			"filename": "snowstormlights_versions.json",
 			"ssl": true
 		}
