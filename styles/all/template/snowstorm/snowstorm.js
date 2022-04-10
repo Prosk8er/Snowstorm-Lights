@@ -2,7 +2,7 @@
  * DHTML Snowstorm! JavaScript-based snow for web pages
  * Making it snow on the internets since 2003. You're welcome.
  * -----------------------------------------------------------
- * Version 1.44.20131208 (Previous rev: 1.44.20131125)
+ * Version 1.44.20131215 (Previous rev: 1.44.20131208)
  * Copyright (c) 2007, Scott Schiller. All rights reserved.
  * Code provided under the BSD License
  * http://schillmania.com/projects/snowstorm/license.txt
@@ -22,7 +22,6 @@ var snowStorm = (function(window, document) {
   this.animationInterval = 33;    // Theoretical "miliseconds per frame" measurement. 20 = fast + smooth, but high CPU use. 50 = more conservative, but slower
   this.useGPU = true;             // Enable transform-based hardware acceleration, reduce CPU load.
   this.className = null;          // CSS class name for further customization on snow elements
-  this.excludeMobile = true;      // Snow is likely to be bad news for mobile phones' CPUs (and batteries.) By default, be nice.
   this.flakeBottom = null;        // Integer for Y axis snow limit, 0 or null for "full-screen" snow effect
   this.followMouse = true;        // Snow movement can respond to the user's mouse
   this.snowColor = '#fff';        // Don't eat (or use?) yellow snow.
@@ -33,6 +32,7 @@ var snowStorm = (function(window, document) {
   this.useTwinkleEffect = false;  // Allow snow to randomly "flicker" in and out of view while falling
   this.usePositionFixed = false;  // true = snow does not shift vertically when scrolling. May increase CPU load, disabled by default - if enabled, used only where supported
   this.usePixelPosition = false;  // Whether to use pixel values for snow top/left vs. percentages. Auto-enabled if body is position:relative or targetElement is specified.
+  this.accessibility = true;      // Hide snow from screen readers
 
   // --- less-used bits ---
 
@@ -127,7 +127,7 @@ var snowStorm = (function(window, document) {
     };
 
     localFeatures.transform.prop = (
-      localFeatures.transform.w3 || 
+      localFeatures.transform.w3 ||
       localFeatures.transform.moz ||
       localFeatures.transform.webkit ||
       localFeatures.transform.ie ||
@@ -384,6 +384,9 @@ var snowStorm = (function(window, document) {
     this.o.style.overflow = 'hidden';
     this.o.style.fontWeight = 'normal';
     this.o.style.zIndex = storm.zIndex;
+    if (storm.accessibility) {
+      this.o.setAttribute('aria-hidden', storm.accessibility);
+    }
     docFrag.appendChild(this.o);
 
     this.refresh = function() {
@@ -401,6 +404,7 @@ var snowStorm = (function(window, document) {
         s.o.style.top = storm.flakeBottom+'px';
       } else {
         s.o.style.display = 'none';
+        s.o.style.top = 'auto';
         s.o.style.bottom = '0%';
         s.o.style.position = 'fixed';
         s.o.style.display = 'block';
