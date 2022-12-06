@@ -5,6 +5,7 @@
 	margin: -16px 0 0 -52px;
 	position: absolute;
 	pointer-events: none;
+	z-index: 1;
 }
 .logo {
 	text-indent: 20px;
