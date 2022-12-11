@@ -1,4 +1,7 @@
 {% if S_SCL_ENABLED and S_SCL_UCP_ENABLED %}
+	<script>
+		var phpbb_root_path = '{{ ROOT_PATH|e("js") }}';
+	</script>
 	{% INCLUDEJS '@prosk8er_snowstormlights/snowstorm/lights/soundmanager2-nodebug-jsmin.js' %}
 	{% INCLUDEJS '@prosk8er_snowstormlights/snowstorm/lights/animation-min.js' %}
 	{% INCLUDEJS '@prosk8er_snowstormlights/snowstorm/lights/christmaslights.js' %}
