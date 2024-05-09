@@ -11,34 +11,36 @@ env:
 on:
     push:
         branches:        # Run tests when commits are pushed to these branches in your repo
+            - 3.3.x
             - master
     pull_request:        # Run tests when pull requests are made on these branches in your repo
         branches:
+            - 3.3.x
             - master
 
 jobs:
     # START Basic Checks Job (EPV, code sniffer, images check, etc.)
     basic-checks:
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-22.04
         strategy:
             matrix:
                 include:
                     - db: 'none'
-                      php: '7.3'
+                      php: '7.2'
                       NOTESTS: 1
 
         name: PHP ${{ matrix.php }} - ${{ matrix.db }}
 
         steps:
             - name: Checkout phpBB
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                   repository: phpbb/phpbb
                   ref: ${{ env.PHPBB_BRANCH }}
                   path: phpBB3
 
             - name: Checkout extension
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                   path: phpBB3/phpBB/ext/${{ env.EXTNAME }}
 
@@ -87,42 +89,44 @@ jobs:
 
     # START MySQL and MariaDB Job
     mysql-tests:
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-22.04
         strategy:
             matrix:
                 include:
-                    - php: '7.3'
+                    - php: '7.2'
                       db: "mariadb:10.1"
-                    - php: '7.3'
+                    - php: '7.2'
                       db: "mariadb:10.2"
-                    - php: '7.3'
+                    - php: '7.2'
                       db: "mariadb:10.3"
-                    - php: '7.3'
+                    - php: '7.2'
                       db: "mariadb:10.4"
-                    - php: '7.3'
+                    - php: '7.2'
                       db: "mariadb:10.5"
-                    - php: '7.3'
-                      db: "mysql:5.6"
-                      db_alias: "MySQL Slow Tests"
-                      SLOWTESTS: 1
-                    - php: '7.3'
+                    - php: '7.2'
                       db: "mysql:5.6"
                       db_alias: "MyISAM Tests"
                       MYISAM: 1
-                    - php: '7.3'
+                    - php: '7.2'
                       db: "mysql:5.6"
+                    - php: '7.2'
+                      db: "mysql:5.7"
+                      COVERAGE: 1
+                      db_alias: "mysql:5.7 with Coverage"
                     - php: '7.3'
                       db: "mysql:5.7"
                     - php: '7.4'
                       db: "mysql:5.7"
                     - php: '7.4'
                       db: "mysql:8.0"
-                    #- php: '8.0'
-                      #db: "mysql:5.7"
-                    #- php: '8.1'
-                      #db: "mysql:5.7"
-                    #- php: '8.2'
-                      #db: "mysql:5.7"
+                    - php: '8.0'
+                      db: "mysql:5.7"
+                    - php: '8.1'
+                      db: "mysql:5.7"
+                    - php: '8.2'
+                      db: "mysql:5.7"
+                    - php: '8.3'
+                      db: "mysql:5.7"
 
         name: PHP ${{ matrix.php }} - ${{ matrix.db_alias != '' && matrix.db_alias || matrix.db }}
 
@@ -139,6 +143,7 @@ jobs:
                     --health-interval=10s
                     --health-timeout=5s
                     --health-retries=3
+
             redis:
                 image: redis
                 options: >-
@@ -151,14 +156,14 @@ jobs:
 
         steps:
             - name: Checkout phpBB
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                   repository: phpbb/phpbb
                   ref: ${{ env.PHPBB_BRANCH }}
                   path: phpBB3
 
             - name: Checkout extension
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                   path: phpBB3/phpBB/ext/${{ env.EXTNAME }}
 
@@ -168,6 +173,7 @@ jobs:
               run: |
                   db=$(echo "${MATRIX_DB%%:*}")
                   echo "db=$db" >> $GITHUB_OUTPUT
+
             - name: Setup PHP
               if: ${{ matrix.COVERAGE != 1 }}
               uses: shivammathur/setup-php@v2
@@ -227,45 +233,51 @@ jobs:
 
             - name: Send code coverage
               if: ${{ matrix.COVERAGE == 1 }}
-              uses: codecov/codecov-action@v1
+              uses: codecov/codecov-action@v3
               with:
-                  file: ./phpBB3/build/logs/clover.xml
+                  files: ./phpBB3/build/logs/clover.xml
     # END MySQL and MariaDB Job
 
     # START PostgreSQL Job
     postgres-tests:
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-22.04
         strategy:
             matrix:
                 include:
-                    - php: '7.3'
+                    - php: '7.2'
+                      db: "postgres:9.3"
+                    - php: '7.2'
                       db: "postgres:9.5"
-                    - php: '7.3'
+                    - php: '7.2'
                       db: "postgres:9.6"
-                    - php: '7.3'
+                    - php: '7.2'
                       db: "postgres:10"
-                    - php: '7.3'
+                    - php: '7.2'
                       db: "postgres:11"
-                    - php: '7.3'
+                    - php: '7.2'
                       db: "postgres:12"
+                    - php: '7.2'
+                      db: "postgres:13"
                     - php: '7.3'
                       db: "postgres:13"
                     - php: '7.4'
                       db: "postgres:13"
-                    #- php: '8.0'
-                      #db: "postgres:12"
-                    #- php: '8.0'
-                      #db: "postgres:13"
-                    #- php: '8.1'
-                      #db: "postgres:14"
-                    #- php: '8.2'
-                      #db: "postgres:14"
+                    - php: '8.0'
+                      db: "postgres:12"
+                    - php: '8.0'
+                      db: "postgres:13"
+                    - php: '8.1'
+                      db: "postgres:14"
+                    - php: '8.2'
+                      db: "postgres:14"
+                    - php: '8.3'
+                      db: "postgres:14"
 
         name: PHP ${{ matrix.php }} - ${{ matrix.db }}
 
         services:
             postgres:
-                image: ${{ matrix.db != 'postgres:9.5' && matrix.db != 'postgres:9.6' && matrix.db != 'postgres:10' && matrix.db != 'postgres:11' && matrix.db != 'postgres:12' && matrix.db != 'postgres:13' && 'postgres:10' || matrix.db }}
+                image: ${{ matrix.db != 'postgres:9.3' && matrix.db != 'postgres:9.5' && matrix.db != 'postgres:9.6' && matrix.db != 'postgres:10' && matrix.db != 'postgres:11' && matrix.db != 'postgres:12' && matrix.db != 'postgres:13' && 'postgres:10' || matrix.db }}
                 env:
                     POSTGRES_HOST: localhost
                     POSTGRES_USER: postgres
@@ -278,6 +290,7 @@ jobs:
                     --health-interval 10s
                     --health-timeout 5s
                     --health-retries 5
+
             redis:
                 image: redis
                 options: >-
@@ -290,14 +303,14 @@ jobs:
 
         steps:
             - name: Checkout phpBB
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                   repository: phpbb/phpbb
                   ref: ${{ env.PHPBB_BRANCH }}
                   path: phpBB3
 
             - name: Checkout extension
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                   path: phpBB3/phpBB/ext/${{ env.EXTNAME }}
 
@@ -307,6 +320,7 @@ jobs:
               run: |
                   db=$(echo "${MATRIX_DB%%:*}")
                   echo "db=$db" >> $GITHUB_OUTPUT
+
             - name: Setup PHP
               uses: shivammathur/setup-php@v2
               with:
@@ -342,16 +356,16 @@ jobs:
 
     # START Other Tests Job (SQLite 3 and mssql)
     other-tests:
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-22.04
         strategy:
             matrix:
                 include:
-                    - php: '7.3'
+                    - php: '7.2'
                       db: "sqlite3"
-                    - php: '7.3'
+                    - php: '7.2'
                       db: "mcr.microsoft.com/mssql/server:2017-latest"
                       db_alias: 'MSSQL 2017'
-                    - php: '7.3'
+                    - php: '7.2'
                       db: "mcr.microsoft.com/mssql/server:2019-latest"
                       db_alias: 'MSSQL 2019'
 
@@ -371,6 +385,7 @@ jobs:
                     --health-timeout 5s
                     --health-retries 5
                     --health-start-period 10s
+
             redis:
                 image: redis
                 options: >-
@@ -383,14 +398,14 @@ jobs:
 
         steps:
             - name: Checkout phpBB
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                   repository: phpbb/phpbb
                   ref: ${{ env.PHPBB_BRANCH }}
                   path: phpBB3
 
             - name: Checkout extension
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                   path: phpBB3/phpBB/ext/${{ env.EXTNAME }}
 
@@ -405,6 +420,7 @@ jobs:
                       db=$(echo "${MATRIX_DB%%:*}")
                   fi
                   echo "db=$db" >> $GITHUB_OUTPUT
+
             - name: Setup PHP
               uses: shivammathur/setup-php@v2
               with:
