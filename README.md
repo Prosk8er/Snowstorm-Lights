@@ -1,8 +1,10 @@
 #Snowstorm-Lights
 
 Extension for phpBB 3.3.x
-Adds a Snowstorm, Smashable Christmas Lights, Snowflakes CSS, Snow on forum headers, and Santa Hat to your forum.
-Snowstorm and smashable christmas lights code written by http://www.schillmania.com/projects/snowstorm/ I made it a extension for phpBB.
+Adds a Snowstorm, Smashable christmas lights, Pure CSS Christmas Lights, CSSnowflakes, Snowbg, and a santa hat to your forum.
+Snowstorm and smashable christmas lights code written by: http://www.schillmania.com/projects/snowstorm/
+Pure CSS Christmas Lights: https://codepen.io/tobyj/pen/QjvEex
+CSSnowflakes: https://github.com/pajasevi/CSSnowflakes
 
 [![Build Status](https://github.com/Prosk8er/Snowstorm-Lights/workflows/Tests/badge.svg)](https://github.com/Prosk8er/Snowstorm-Lights/actions)
 [![Alt text](https://img.shields.io/badge/phpBB-3.3.x%20Compatible%20-blue.svg)](https://github.com/Prosk8er/Snowstorm-Lights)
