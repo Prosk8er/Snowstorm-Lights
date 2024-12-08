@@ -2,16 +2,11 @@
 	background: url("./images/santahat.png");
 	height: 128px;
 	width: 128px;
-	margin: -16px 0 0 -52px;
+	margin: -12px 0 0 -78px;
 	position: absolute;
 	pointer-events: none;
+	z-index: 1;
 }
 .logo {
 	text-indent: 20px;
 }
-@media (max-width: 767px) {
-	#santahat {
-		left: 0;
-	}
-}
-

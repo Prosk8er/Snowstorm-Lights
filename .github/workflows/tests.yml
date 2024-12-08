@@ -25,8 +25,8 @@ jobs:
         strategy:
             matrix:
                 include:
-                    - db: 'none'
-                      php: '7.2'
+                    - php: '7.2'
+                      db: "none"
                       NOTESTS: 1
 
         name: PHP ${{ matrix.php }} - ${{ matrix.db }}
@@ -126,6 +126,8 @@ jobs:
                     #- php: '8.2'
                       #db: "mysql:5.7"
                     #- php: '8.3'
+                      #db: "mysql:5.7"
+                    #- php: '8.4'
                       #db: "mysql:5.7"
 
         name: PHP ${{ matrix.php }} - ${{ matrix.db_alias != '' && matrix.db_alias || matrix.db }}
@@ -245,8 +247,6 @@ jobs:
             matrix:
                 include:
                     - php: '7.2'
-                      db: "postgres:9.3"
-                    - php: '7.2'
                       db: "postgres:9.5"
                     - php: '7.2'
                       db: "postgres:9.6"
@@ -272,12 +272,14 @@ jobs:
                       #db: "postgres:14"
                     #- php: '8.3'
                       #db: "postgres:14"
+                    #- php: '8.4'
+                      #db: "postgres:14"
 
         name: PHP ${{ matrix.php }} - ${{ matrix.db }}
 
         services:
             postgres:
-                image: ${{ matrix.db != 'postgres:9.3' && matrix.db != 'postgres:9.5' && matrix.db != 'postgres:9.6' && matrix.db != 'postgres:10' && matrix.db != 'postgres:11' && matrix.db != 'postgres:12' && matrix.db != 'postgres:13' && 'postgres:10' || matrix.db }}
+                image: ${{ matrix.db != 'postgres:9.5' && matrix.db != 'postgres:9.6' && matrix.db != 'postgres:10' && matrix.db != 'postgres:11' && matrix.db != 'postgres:12' && matrix.db != 'postgres:13' && 'postgres:10' || matrix.db }}
                 env:
                     POSTGRES_HOST: localhost
                     POSTGRES_USER: postgres

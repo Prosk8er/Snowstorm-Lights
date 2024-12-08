@@ -1,0 +1,5 @@
+Snowstorm & Smash Christmas Lights: https://www.schillmania.com/projects/snowstorm/
+https://github.com/scottschiller/snowstorm/
+
+Pure CSS Christmas Lights: https://codepen.io/tobyj/pen/QjvEex
+CSSnowflakes: https://github.com/pajasevi/CSSnowflakes
