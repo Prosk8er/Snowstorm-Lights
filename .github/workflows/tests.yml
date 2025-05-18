@@ -21,5 +21,9 @@ jobs:
         with:
             EXTNAME: prosk8er/snowstormlights # Your extension vendor/package name
             RUN_FUNCTIONAL_TESTS: 0 # Run functional tests if you have them? 1 or 0
+            RUN_MYSQL_JOBS: 0
+            RUN_PGSQL_JOBS: 0
+            RUN_MSSQL_JOBS: 0
+            RUN_WINDOWS_JOBS: 0
         secrets:
             CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }} # Do not change this
