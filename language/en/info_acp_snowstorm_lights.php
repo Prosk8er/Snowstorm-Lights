@@ -2,7 +2,7 @@
 /**
 *
 * @package Snowstorm and Lights
-* @copyright (c) 2024 Prosk8er <https://www.gotskillslounge.com>
+* @copyright (c) 2025 Prosk8er <https://www.gotskillslounge.com>
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
@@ -45,6 +45,7 @@ $lang = array_merge($lang, [
 	'SNOWCSS_ENABLED'		=> 'Enable “CSSnowflakes”',
 	'SNOWBG_ENABLED'		=> 'Enable Snow on forum headers.',
 	'SANTAHAT_ENABLED'		=> 'Enable “Santa Hat”',
+	'XMASHOVER_ENABLED'		=> 'Enable “XMAS Hover”',
 	'SNOWSTORM_LIGHTS'		=> 'Snowstorm and Lights',
 	'SNOWSTORM_LIGHTS_EXPLAIN'	=> 'Configure Snowstorm and Lights.',
 	'SNOWSTORM_LIGHTS_SAVED'	=> 'Changes Saved.',

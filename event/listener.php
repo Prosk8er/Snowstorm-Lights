@@ -2,7 +2,7 @@
 /**
 *
 * @package Snowstorm and Lights
-* @copyright (c) 2024 Prosk8er <https://www.gotskillslounge.com>
+* @copyright (c) 2025 Prosk8er <https://www.gotskillslounge.com>
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
@@ -88,6 +88,8 @@ class listener implements EventSubscriberInterface
 			'S_SNOWBG_UCP_ENABLED'		=> isset($this->user->data['user_snowbg_enabled']) ? $this->user->data['user_snowbg_enabled'] : '',
 			'S_SANTAHAT_ENABLED'		=> isset($this->config['santahat_enabled']) ? $this->config['santahat_enabled'] : '',
 			'S_SANTAHAT_UCP_ENABLED'	=> isset($this->user->data['user_santahat_enabled']) ? $this->user->data['user_santahat_enabled'] : '',
+			'S_XMASHOVER_ENABLED'		=> isset($this->config['xmashover_enabled']) ? $this->config['xmashover_enabled'] : '',
+			'S_XMASHOVER_UCP_ENABLED'	=> isset($this->user->data['user_xmashover_enabled']) ? $this->user->data['user_xmashover_enabled'] : '',
 		]);
 	}
 
@@ -102,6 +104,7 @@ class listener implements EventSubscriberInterface
 			'snowcss_ucp_enabled'	=> $this->request->variable('snowcss_ucp_enabled', (bool) $this->user->data['user_snowcss_enabled']),
 			'snowbg_ucp_enabled'	=> $this->request->variable('snowbg_ucp_enabled', (bool) $this->user->data['user_snowbg_enabled']),
 			'santahat_ucp_enabled'	=> $this->request->variable('santahat_ucp_enabled', (bool) $this->user->data['user_santahat_enabled']),
+			'xmashover_ucp_enabled'	=> $this->request->variable('xmashover_ucp_enabled', (bool) $this->user->data['user_xmashover_enabled']),
 		]);
 
 		$event['data'] = $data;
@@ -119,6 +122,7 @@ class listener implements EventSubscriberInterface
 			'user_snowcss_enabled'		=> $data['snowcss_ucp_enabled'],
 			'user_snowbg_enabled'		=> $data['snowbg_ucp_enabled'],
 			'user_santahat_enabled'		=> $data['santahat_ucp_enabled'],
+			'user_xmashover_enabled'	=> $data['xmashover_ucp_enabled'],
 		]);
 
 		$event['sql_ary'] = $sql_ary;

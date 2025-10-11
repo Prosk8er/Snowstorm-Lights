@@ -1,0 +1,7 @@
+@media screen and (min-width: 700px) and (min-device-width: 700px){
+	li.row:hover {
+		background-image: url("./images/xmashover.png");
+		background-repeat: no-repeat;
+		background-position: right center;
+	}
+}

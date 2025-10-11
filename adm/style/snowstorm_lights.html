@@ -18,7 +18,7 @@
 			</dd>
 		</dl>
 
-		<br />
+		<br>
 
 		<dl>
 			<dt><label for="lightscss_enabled">{{ lang('LIGHTSCSS_ENABLED') ~ lang('COLON') }}</label></dt>
@@ -28,7 +28,7 @@
 			</dd>
 		</dl>
 
-		<br />
+		<br>
 
 		<dl>
 			<dt><label for="snow_enabled">{{ lang('SNOW_ENABLED') ~ lang('COLON') }}</label></dt>
@@ -38,7 +38,7 @@
 			</dd>
 		</dl>
 
-		<br />
+		<br>
 
 		<dl>
 			<dt><label for="snowcss_enabled">{{ lang('SNOWCSS_ENABLED') ~ lang('COLON') }}</label></dt>
@@ -48,7 +48,7 @@
 			</dd>
 		</dl>
 
-		<br />
+		<br>
 
 		<dl>
 			<dt><label for="snowbg_enabled">{{ lang('SNOWBG_ENABLED') ~ lang('COLON') }}</label></dt>
@@ -58,13 +58,23 @@
 			</dd>
 		</dl>
 
-		<br />
+		<br>
 
 		<dl>
 			<dt><label for="santahat_enabled">{{ lang('SANTAHAT_ENABLED') ~ lang('COLON') }}</label></dt>
 			<dd>
 				<label><input type="radio" class="radio" id="santahat_enabled" name="santahat_enabled" value="1"{% if SANTAHAT_ENABLED %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
 				<label><input type="radio" class="radio" name="santahat_enabled" value="0"{% if not SANTAHAT_ENABLED %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+
+		<br>
+
+		<dl>
+			<dt><label for="xmashover_enabled">{{ lang('XMASHOVER_ENABLED') ~ lang('COLON') }}</label></dt>
+			<dd>
+				<label><input type="radio" class="radio" id="xmashover_enabled" name="xmashover_enabled" value="1"{% if XMASHOVER_ENABLED %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+				<label><input type="radio" class="radio" name="xmashover_enabled" value="0"{% if not XMASHOVER_ENABLED %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
 			</dd>
 		</dl>
 	</fieldset>

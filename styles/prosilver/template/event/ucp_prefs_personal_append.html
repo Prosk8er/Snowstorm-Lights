@@ -57,3 +57,13 @@
 			</dd>
 		</dl>
 	{% endif %}
+
+	{% if S_XMASHOVER_ENABLED %}
+		<dl>
+			<dt><label for="xmashover_ucp_enabled0">{{ lang('XMASHOVER_ENABLED') ~ lang('COLON') }}</label><br /><span>{{ lang('XMASHOVER_ENABLED_EXPLAIN') }}</span></dt>
+			<dd>
+				<label for="xmashover_ucp_enabled1"><input type="radio" name="xmashover_ucp_enabled" id="xmashover_ucp_enabled1" value="1"{% if S_XMASHOVER_UCP_ENABLED %} checked="checked"{% endif %} /> {{ lang('YES') }}</label> 
+				<label for="xmashover_ucp_enabled0"><input type="radio" name="xmashover_ucp_enabled" id="xmashover_ucp_enabled0" value="0"{% if not S_XMASHOVER_UCP_ENABLED %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+	{% endif %}

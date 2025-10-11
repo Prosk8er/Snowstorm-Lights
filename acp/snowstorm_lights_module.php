@@ -2,7 +2,7 @@
 /**
 *
 * @package Snowstorm and Lights
-* @copyright (c) 2024 Prosk8er <https://www.gotskillslounge.com>
+* @copyright (c) 2025 Prosk8er <https://www.gotskillslounge.com>
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
@@ -79,6 +79,9 @@ class snowstorm_lights_module
 			$santahat_enabled = $request->variable('santahat_enabled', 0);
 			$this->config->set('santahat_enabled', $santahat_enabled);
 
+			$xmashover_enabled = $request->variable('xmashover_enabled', 0);
+			$this->config->set('xmashover_enabled', $xmashover_enabled);
+
 			// Output message to user for the update
 			trigger_error($this->user->lang('SNOWSTORM_LIGHTS_SAVED') . adm_back_link($this->u_action));
 		}
@@ -91,6 +94,7 @@ class snowstorm_lights_module
 			'SNOWCSS_ENABLED'	=> $this->config['snowcss_enabled'],
 			'SNOWBG_ENABLED'	=> $this->config['snowbg_enabled'],
 			'SANTAHAT_ENABLED'	=> $this->config['santahat_enabled'],
+			'XMASHOVER_ENABLED'	=> $this->config['xmashover_enabled'],
 			'U_ACTION'		=> $this->u_action,
 		]);
 	}

@@ -4,7 +4,7 @@
 	"description": "Adds a Snowstorm and smashable christmas lights to your forum.",
 	"homepage": "https://github.com/Prosk8er/Snowstorm-Lights",
 	"version": "1.0.5",
-	"time": "2024-12-07",
+	"time": "2025-10-09",
 	"keywords": ["phpbb", "extension", "snowstorm", "lights"],
 	"license": "GPL-2.0-only",
 	"authors": [
@@ -22,17 +22,17 @@
 		}
 	],
 	"require": {
-		"php": ">=5.4",
-		"composer/installers": "~1.0.0",
-		"phpbb/phpbb": ">=3.2.0,<4.0.0@dev"
+		"php": ">=7.2.0",
+		"composer/installers": "^1.0 || ^2.0",
+		"phpbb/phpbb": ">=3.3.0,<4.0.0@dev"
 	},
 	"require-dev": {
-		"phing/phing": "2.4.*"
+		"phing/phing": "~2.4"
 	},
 	"extra": {
 		"display-name": "Snowstorm and Lights",
 		"soft-require": {
-			"phpbb/phpbb": ">=3.2.0,<4.0.0@dev"
+			"phpbb/phpbb": ">=3.3.0,<4.0.0@dev"
 		},
 		"version-check": {
 			"host": "www.gotskillslounge.com",

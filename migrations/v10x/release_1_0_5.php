@@ -2,7 +2,7 @@
 /**
 *
 * @package Snowstorm and Lights
-* @copyright (c) 2024 Prosk8er <https://www.gotskillslounge.com>
+* @copyright (c) 2025 Prosk8er <https://www.gotskillslounge.com>
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
@@ -21,9 +21,21 @@ class release_1_0_5 extends \phpbb\db\migration\migration
 		return ['\prosk8er\snowstormlights\migrations\v10x\release_1_0_4'];
 	}
 
+	public function update_schema()
+	{
+		return [
+			'add_columns'	=> [
+				$this->table_prefix . 'users'	=> [
+					'user_xmashover_enabled' => ['BOOL', 1],
+				],
+			],
+		];
+	}
+
 	public function update_data()
 	{
 		return [
+			['config.add', ['xmashover_enabled', 0]],
 			['config.update', ['snowstorm_lights_version', '1.0.5']],
 		];
 	}
@@ -31,7 +43,19 @@ class release_1_0_5 extends \phpbb\db\migration\migration
 	public function revert_data()
 	{
 		return [
+			['config.remove', ['xmashover_enabled']],
 			['config.remove', ['snowstorm_lights_version']],
+		];
+	}
+
+	public function revert_schema()
+	{
+		return [
+			'drop_columns'	=> [
+				$this->table_prefix . 'users'	=> [
+					'user_xmashover_enabled',
+				],
+			],
 		];
 	}
 }
