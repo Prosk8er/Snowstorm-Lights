@@ -24,7 +24,7 @@
 	"require": {
 		"php": ">=7.2.0",
 		"composer/installers": "^1.0 || ^2.0",
-		"phpbb/phpbb": ">=3.3.0,<4.0.0@dev"
+		"phpbb/phpbb": ">=3.3.0"
 	},
 	"require-dev": {
 		"phing/phing": "~2.4"
@@ -32,7 +32,7 @@
 	"extra": {
 		"display-name": "Snowstorm and Lights",
 		"soft-require": {
-			"phpbb/phpbb": ">=3.3.0,<4.0.0@dev"
+			"phpbb/phpbb": ">=3.3.0"
 		},
 		"version-check": {
 			"host": "www.gotskillslounge.com",
